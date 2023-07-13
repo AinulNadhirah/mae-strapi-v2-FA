@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-native-qrcode-image/lib/QRCode.js b/node_modules/react-native-qrcode-image/lib/QRCode.js
+index 9a7ea43..bf3f318 100644
+--- a/node_modules/react-native-qrcode-image/lib/QRCode.js
++++ b/node_modules/react-native-qrcode-image/lib/QRCode.js
+@@ -90,7 +90,9 @@ class QRCode extends React.Component {
+     const imageSize = Math.ceil(size / imageMultiple) * imageMultiple;
+     const scale = imageSize / QRData.length;
+     const uri = qr2bmp(QRData, [parseColor(bgColor), parseColor(fgColor)], scale);
+-
++    if (this.props.getBase64){
++       this.props.getBase64(uri);
++    }
+     return (
+       <View>
+         <Image source={{ uri }} style={{ width: size, height: size }} />

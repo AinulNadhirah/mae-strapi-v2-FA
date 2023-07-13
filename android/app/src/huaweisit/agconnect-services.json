@@ -1,0 +1,182 @@
+{
+    "agcgw": {
+        "backurl": "connect-dra.dbankcloud.cn",
+        "url": "connect-dra.hispace.hicloud.com",
+        "websocketbackurl": "connect-ws-dra.hispace.dbankcloud.cn",
+        "websocketurl": "connect-ws-dra.hispace.dbankcloud.com"
+    },
+    "agcgw_all": {
+        "CN": "connect-drcn.hispace.hicloud.com",
+        "CN_back": "connect-drcn.dbankcloud.cn",
+        "DE": "connect-dre.hispace.hicloud.com",
+        "DE_back": "connect-dre.dbankcloud.cn",
+        "RU": "connect-drru.hispace.hicloud.com",
+        "RU_back": "connect-drru.dbankcloud.cn",
+        "SG": "connect-dra.hispace.hicloud.com",
+        "SG_back": "connect-dra.dbankcloud.cn"
+    },
+    "client": {
+        "cp_id": "890060000000001279",
+        "product_id": "736430079245824857",
+        "client_id": "660634592486634112",
+        "client_secret": "CA4D5A37BCD225E8F953C307B7B842065D33CA6BC38AED3B671F45E009CB8FFF",
+        "project_id": "736430079245824857",
+        "app_id": "104476571",
+        "api_key": "CgB6e3x9sUbazJiRJVh4TuZRUEymnyHYRspvAjsyLjJ+sbz3tuWglC163A6H9pqN1Ri1SdkLUbsJpRRzuQM/e9nf",
+        "package_name": "com.maybank2u.life.huawei.sit"
+    },
+    "oauth_client": {
+        "client_id": "104476571",
+        "client_type": 1
+    },
+    "app_info": {
+        "app_id": "104476571",
+        "package_name": "com.maybank2u.life.huawei.sit"
+    },
+    "service": {
+        "analytics": {
+            "collector_url": "datacollector-dra.dt.hicloud.com,datacollector-dra.dt.dbankcloud.cn",
+            "resource_id": "p1",
+            "channel_id": ""
+        },
+        "search": {
+            "url": "https://search-dra.cloud.huawei.com"
+        },
+        "cloudstorage": {
+            "storage_url": "https://ops-dra.agcstorage.link"
+        },
+        "ml": {
+            "mlservice_url": "ml-api-dra.ai.dbankcloud.com,ml-api-dra.ai.dbankcloud.cn"
+        }
+    },
+    "region": "SG",
+    "configuration_version": "3.0",
+    "appInfos": [
+        {
+            "package_name": "com.maybank2u.life.huawei.prd",
+            "client": {
+                "app_id": "104476621"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.prd",
+                "app_id": "104476621"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476621"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.ntt",
+            "client": {
+                "app_id": "104476583"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.ntt",
+                "app_id": "104476583"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476583"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.kldc",
+            "client": {
+                "app_id": "104476581"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.kldc",
+                "app_id": "104476581"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476581"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.cind",
+            "client": {
+                "app_id": "104476579"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.cind",
+                "app_id": "104476579"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476579"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.stg",
+            "client": {
+                "app_id": "104476577"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.stg",
+                "app_id": "104476577"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476577"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.uat",
+            "client": {
+                "app_id": "104476575"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.uat",
+                "app_id": "104476575"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476575"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.sit",
+            "client": {
+                "app_id": "104476571"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.sit",
+                "app_id": "104476571"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476571"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei.dev",
+            "client": {
+                "app_id": "104476569"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei.dev",
+                "app_id": "104476569"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476569"
+            }
+        },
+        {
+            "package_name": "com.maybank2u.life.huawei",
+            "client": {
+                "app_id": "104476551"
+            },
+            "app_info": {
+                "package_name": "com.maybank2u.life.huawei",
+                "app_id": "104476551"
+            },
+            "oauth_client": {
+                "client_type": 1,
+                "client_id": "104476551"
+            }
+        }
+    ]
+}

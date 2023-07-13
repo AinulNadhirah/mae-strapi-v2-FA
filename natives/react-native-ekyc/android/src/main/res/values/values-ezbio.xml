@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="flc_use_rect_target">false</bool>
+    <color name="feedback_background">#cfd8dc</color>
+    <color name="feedback_primary">@color/vvutils_primary</color>
+    <color name="feedback_text_color_dark">#878787</color>
+    <color name="flc_target">@color/vvutils_accent</color>
+    <color name="flc_target_hit">#B400B400</color>
+    <color name="flc_target_neutral">#B4888888</color>
+    <color name="flc_target_red">#B4E60000</color>
+    <color name="frame_background_opaque">#ffffffff</color>
+    <color name="frame_background_transparent">#7Bffffff</color>
+    <color name="prompt">@color/vvutils_primary</color>
+    <color name="prompt_lead">#212121</color>
+    <color name="vvutils_accent">#03a9f4</color>
+    <color name="vvutils_error">#ec4c56</color>
+    <color name="vvutils_primary">#4367e1</color>
+    <color name="vvutils_truly_secure">#173e96</color>
+    <declare-styleable name="TransparentFrameView"><attr format="reference|dimension" name="framePaddingLeft"/><attr format="reference|dimension" name="framePaddingRight"/><attr format="reference|dimension" name="framePaddingTop"/><attr format="reference|dimension" name="framePaddingBottom"/><attr format="reference|float" name="framePaddingBottomFactor"/><attr format="reference|dimension" name="frameCornerRadius"/><attr format="reference|color" name="frameBackground"/><attr format="reference|integer" name="photoStrokeWidth"/><attr format="reference|color" name="photoStrokeColor"/><attr format="reference|color" name="photoMaskColor"/><attr format="reference|dimension" name="photoMaskGap"/></declare-styleable>
+    <dimen name="feedback_complex_height">88dp</dimen>
+    <dimen name="feedback_meter_icon_size">18dp</dimen>
+    <dimen name="feedback_mode_ico_size">20dp</dimen>
+    <dimen name="feedback_side_padding">15dp</dimen>
+    <dimen name="feedback_simple_height">64dp</dimen>
+    <dimen name="feedback_simple_margin">28dp</dimen>
+    <dimen name="feedback_target_ico_size">29dp</dimen>
+    <dimen name="indicator_padding">1dp</dimen>
+    <string name="app_settings">Settings</string>
+    <string name="audio_record_error">Unable to open the microphone. Please check running apps or services to see if any are using the microphone.</string>
+    <string name="authenticator_activity_title">User Authentication</string>
+    <string name="autoregeneration_msg">Your biometric enrollment is being updated to the latest version. \nPlease wait while this process completes.</string>
+    <string name="autoregeneration_title">Automatic Enrollment Upgrade</string>
+    <string name="bad_error_title">Oops</string>
+    <string name="camera_audio_error">Unable to open the camera or the microphone.  Please check running apps or services to see if any are using the camera or microphone.</string>
+    <string name="camera_error">Unable to open the camera.  Please check running apps or services to see if any are using the camera.</string>
+    <string name="dialog_retry">Retry</string>
+    <string name="disk_space_error">There is insufficient storage on your device.</string>
+    <string name="empty_string"/>
+    <string name="enroll_combo_instructions"><b>Instructions:</b> \n
+        \t • Find a quiet and well-lit place \n
+        \t • Ensure your face is centered \n
+        \t • Clearly say your passphrase when prompted \n
+        \t • When ready, tap the button to start</string>
+    <string name="enroll_face_instructions"><b>Instructions:</b> \n
+        \t • Find a well-lit place \n
+        \t • Ensure your face is centered \n
+        \t • Follow on-screen prompts \n
+        \t • When ready, tap the button to start</string>
+    <string name="enroll_saving_msg">Saving …</string>
+    <string name="enroll_voice_instructions"><b>Instructions:</b> \n
+        \t • Find a quiet place \n
+        \t • Clearly say your passphrase when prompted \n
+        \t • When ready, tap the button to start</string>
+    <string name="enroller_activity_title">User Enrollment</string>
+    <string name="enrollment_couldnt_be_completed">Enrollment could not be completed</string>
+    <string name="error_voice_title">We couldn\'t hear you</string>
+    <string name="face_dont_see">Sorry, we don\'t see your face.</string>
+    <string name="face_enrolling_prompt">Look into the camera</string>
+    <string name="face_only_enroll_command_1">Look into the camera</string>
+    <string name="face_only_enroll_command_2">Nod slowly</string>
+    <string name="face_only_enroll_command_3">Blink</string>
+    <string name="face_only_enroll_command_4">Smile</string>
+    <string name="face_only_enroll_command_default">Look around you</string>
+
+    <string name="face_poor">Please align and fill the frame with your face.</string>
+    <string name="flc_align_nose">Align nose to crosshair</string>
+    <string name="flc_fail">Failed face liveness challenge</string>
+    <string name="flc_follow_prompts">Tilt head to follow prompts</string>
+    <string name="flc_success"> </string>
+    <string name="light_move_to_lit">Please move to a better lit location.</string>
+    <string name="misc_error">We\'re sorry. Enrollment failed.  Please exit the app and try again.</string>
+    <string name="noise_move_to_quiter">Please move to a quieter location.</string>
+    <string name="noise_speak_louder">Please speak louder.</string>
+    <string name="perms_camera">Camera</string>
+    <string name="perms_error">To function properly, %1$s needs your permission.  Go to Settings to allow permission for %2$s.</string>
+    <string name="perms_mic">Microphone</string>
+    <string name="prompt_repeat">Repeat:</string>
+    <string name="prompt_repeat_full">Repeat your unlock phrase</string>
+    <string name="prompt_say">Say:</string>
+    <string name="prompt_say_full">Say your unlock phrase</string>
+    <string name="auth_prompt">Say your unlock phrase</string>
+    <string name="silence_timeout_facevoice">Speak your phrase clearly while aligning your face to the frame</string>
+    <string name="silence_timeout_voice">Speak your phrase clearly</string>
+    <string name="suggestion_clearly_say_voice">Clearly say your passphrase when prompted</string>
+    <string name="suggestion_make_sure_face_vis">Make sure your face is clearly visible and fills the frame</string>
+    <string name="suggestion_move_face">Move to a well-lit place</string>
+    <string name="suggestion_move_facevoice">Move to a quiet and well-lit place</string>
+    <string name="suggestion_move_voice">Move to a quiet place</string>
+    <string name="this_app">this app</string>
+    <string name="vvutils_version" translatable="false">3.8.0</string>
+	<string name="aws_bucket_name">com.sensory.trulysecure</string>
+    <string name="aws_identity_pool"/>
+    <string name="datautils_version" translatable="false">3.8.0</string>
+	<string name="opencv_license_title">OpenCV</string>
+    <string name="opencv_license">                          License Agreement\n               For Open Source Computer Vision Library\n                       (3-clause BSD License)\n\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n  * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n  * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n  * Neither the names of the copyright holders nor the names of the contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nThis software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall copyright holders or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</string>
+    <string name="start_btn_txt">Start</string>
+
+    <string name="enroll_complete">Enrollment Completed</string>
+    <string name="enroll_error">Enrollment Error</string>
+    <string name="enroll_timeout">Enrollment Timeout</string>
+    <string name="enroll_aborted">Enrollment Aborted</string>
+
+    <string name="auth_complete">Authentication Completed</string>
+    <string name="auth_error">Authentication Error</string>
+    <string name="auth_timeout">Authentication Timeout</string>
+    <string name="auth_aborted">AuthenticationAborted</string>
+
+	  <!-- custom enroll progress dialog -->
+  <string name="enrollment_complete_title">Completed Enrollment...</string>
+  <string name="enrollment_complete_text">Storing enrollment...</string>
+  
+    <style name="AuthPromptStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#212121</item>
+        <item name="android:background">@color/frame_background_transparent</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FeedbackMeterIndicator" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:max">4</item>
+        <item name="android:progressDrawable">@drawable/feedback_bar</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:minHeight">5dp</item>
+        <item name="android:maxHeight">5dp</item>
+    </style>
+    <style name="IndicatorIcon">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="PhraseIconStyle">
+        <item name="android:src">@drawable/phrase_icon</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+    </style>
+    <style name="StatusIcon">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="TransparentFrameStyle">
+        <item name="framePaddingLeft">46dp</item>
+        <item name="framePaddingRight">46dp</item>
+        <item name="framePaddingTop">14dp</item>
+        <item name="framePaddingBottom">14dp</item>
+        <item name="frameCornerRadius">8dp</item>
+        <item name="frameBackground">@color/frame_background_transparent</item>
+        <item name="photoStrokeColor">#eef1f2</item>
+        <item name="photoStrokeWidth">6</item>
+        <item name="photoMaskColor">#E6ffffff</item>
+        <item name="photoMaskGap">18dp</item>
+    </style>
+    <style name="VVDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/vvutils_accent</item>
+        <item name="android:textColor">@color/prompt_lead</item>
+        <item name="android:textColorPrimary">@color/feedback_text_color_dark</item>
+    </style>
+    <style name="VuiMeter" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/feedback_bar</item>
+        <item name="android:minHeight">6dp</item>
+        <item name="android:maxHeight">6dp</item>
+    </style>
+</resources>

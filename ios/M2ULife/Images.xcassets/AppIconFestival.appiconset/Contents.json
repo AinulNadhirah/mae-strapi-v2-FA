@@ -1,0 +1,62 @@
+{
+    "images": [
+        {
+            "filename": "MAYA-Logo-40.png",
+            "idiom": "iphone",
+            "scale": "2x",
+            "size": "20x20"
+        },
+        {
+            "filename": "MAYA-Logo-60.png",
+            "idiom": "iphone",
+            "scale": "3x",
+            "size": "20x20"
+        },
+        {
+            "filename": "MAYA-Logo-58.png",
+            "idiom": "iphone",
+            "scale": "2x",
+            "size": "29x29"
+        },
+        {
+            "filename": "MAYA-Logo-87.png",
+            "idiom": "iphone",
+            "scale": "3x",
+            "size": "29x29"
+        },
+        {
+            "filename": "MAYA-Logo-80.png",
+            "idiom": "iphone",
+            "scale": "2x",
+            "size": "40x40"
+        },
+        {
+            "filename": "MAYA-Logo-120.png",
+            "idiom": "iphone",
+            "scale": "3x",
+            "size": "40x40"
+        },
+        {
+            "filename": "MAYA-Logo-120.png",
+            "idiom": "iphone",
+            "scale": "2x",
+            "size": "60x60"
+        },
+        {
+            "filename": "MAYA-Logo-180.png",
+            "idiom": "iphone",
+            "scale": "3x",
+            "size": "60x60"
+        },
+        {
+            "filename": "MAYA-Logo-1024.png",
+            "idiom": "ios-marketing",
+            "scale": "1x",
+            "size": "1024x1024"
+        }
+    ],
+    "info": {
+        "author": "xcode",
+        "version": 1
+    }
+}

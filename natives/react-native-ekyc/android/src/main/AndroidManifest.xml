@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:tools="http://schemas.android.com/tools" 
+          package="com.M2ULife.ekycEzbio">
+    <application tools:ignore="GoogleAppIndexingWarning">
+            <activity android:name="com.M2ULife.ekycEzbio.ReactNativeEkycActivity" android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name="com.ficocustom.ScanActivityBaseCustom"  android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+             <activity
+            android:name="com.M2ULife.ekycEzbio.ReactNativeEzbioActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:label="EzCustom Activity"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+ </application>
+</manifest>

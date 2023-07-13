@@ -1,0 +1,369 @@
+platform :ios do
+
+  desc 'Build iOS app'
+  lane :build do |options|
+    shieldName = options[:shieldName]
+    scheme = options[:scheme]
+    exportMethod = options[:exportMethod]
+    plist = options[:plist]
+    ipaName = options[:ipaName]
+    gitTag = last_git_tag
+    add_badge(shield: shieldName,  no_badge: true, glob: "/ios/M2ULife/Images.xcassets/AppIcon.appiconset/MAYA-Logo*", shield_gravity: "South")
+    cocoapods(podfile: "./ios/Podfile", try_repo_update_on_error: true)
+    build_app(
+      scheme: "M2ULife #{scheme}",
+      workspace: "./ios/M2ULife.xcworkspace",
+      export_method: exportMethod,
+      clean: true,
+      output_name: ipaName
+    )
+  end
+
+  desc "Upload iOS app to App Center"
+  lane :appcenter do |options|
+    lastTag = last_git_tag
+    appName = options[:appName]
+    ipaPath = options[:ipaPath]
+    dsymPath = options[:dsymPath]
+    previousTag = get_previous_tag()
+    releaseNotes = changelog_from_git_commits(
+      between: [previousTag, lastTag], 
+      pretty: "- (%ae) %s",
+      date_format: "short",
+      merge_commit_filtering: "exclude_merges"
+    )
+    appcenter_upload(
+      api_token: "7903130a029adb1b9ae32ce0e8e8417b136a621b",
+      owner_name: "MBB-CFS",
+      owner_type: "organization",
+      app_name: appName,
+      file: ipaPath,
+      dsym: dsymPath,
+      notify_testers: true,
+      release_notes: releaseNotes
+    )
+  end
+
+  desc 'iOS Development version distribution flow'
+  lane :dev do 
+    name = "M2ULifeDEV"
+    build(shieldName: "DEV-#{last_git_tag}-red", scheme: "Development", exportMethod: "development", plist: "./ios/M2ULife/M2ULifeDEV-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-Dev", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    upload_ios_sourcemaps(bugsnag_api_key: "f19c502928d5095b61d798843353b52b")
+  end
+
+  desc 'iOS SIT version distribution flow'
+  lane :sit do 
+    name = "M2ULifeSIT"
+    update_ios_version()
+    build(shieldName: "SIT-#{last_git_tag}-green", scheme: "SIT", exportMethod: "enterprise", plist: "./ios/M2ULife/M2ULifeSIT-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-SIT", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    #upload_ios_sourcemaps(bugsnag_api_key: "3beb28306fcc98bf54ea6cbd10624b1b")
+    commit_ios_version_bump(env: "SIT")
+  end
+
+  desc 'iOS UAT version distribution flow'
+  lane :uat do 
+    name = "M2ULifeUAT"
+    update_ios_version()
+    build(shieldName: "UAT-#{last_git_tag}-blue", scheme: "UAT", exportMethod: "enterprise", plist: "./ios/M2ULife/M2ULifeUAT-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-UAT", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    #upload_ios_sourcemaps(bugsnag_api_key: "79ba28b3aae330795bf41d6d8dd3a328")
+    commit_ios_version_bump(env: "UAT")
+  end
+
+
+  desc 'iOS CIND version distribution flow'
+  lane :cind do 
+    name = "M2ULifeCIND"
+    build(shieldName: "CIND-#{last_git_tag}-blue", scheme: "CIND", exportMethod: "enterprise", plist: "./ios/M2ULife/M2ULifeCIND-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-CIND", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    upload_ios_sourcemaps(bugsnag_api_key: "b57518a10288f760ac6c163f16702f83")
+  end
+
+  desc 'iOS NTT version distribution flow'
+  lane :ntt do 
+    name = "M2ULifeNTT"
+    build(shieldName: "NTT-#{last_git_tag}-blue", scheme: "NTT", exportMethod: "enterprise", plist: "./ios/M2ULife/M2ULifeNTT-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-NTT", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    upload_ios_sourcemaps(bugsnag_api_key: "65dcc779f861773f311face01a9d93f1")
+  end
+
+  desc 'iOS KLDC version distribution flow'
+  lane :kldc do 
+    name = "M2ULifeKLDC"
+    build(shieldName: "KLDC-#{last_git_tag}-blue", scheme: "KLDC", exportMethod: "enterprise", plist: "./ios/M2ULife/M2ULifeKLDC-Info.plist", ipaName: "#{name}.ipa")
+    appcenter(appName: "MAE-iOS-KLDC", ipaPath: "./#{name}.ipa", dsymPath: "./#{name}.app.dSYM.zip" )
+    upload_ios_sourcemaps(bugsnag_api_key: "0d21b36284b9e561cde585b922415c6f")
+  end
+
+  desc "iOS Production version distribution flow"
+  lane :production do
+    build_app(
+      scheme: "M2ULife Production",
+      workspace: "./ios/M2ULife.xcworkspace",
+      export_method: "app-store",
+      clean: true,
+      output_name: "M2ULife.ipa"
+    )
+    #upload_to_app_store
+    upload_ios_sourcemaps(bugsnag_api_key: "bc5dbafa0452c39107cdc6000c016de5")
+  end
+
+end
+
+platform :android do
+
+  desc 'Build the Android application'
+  lane :build do |options|
+    shieldName = options[:shieldName]
+    buildVariant = options[:buildVariant]
+    buildType = options[:buildType]
+    add_badge(shield: shieldName,  no_badge: true, glob: "/android/app/src/main/res/mipmap-*/maya*", shield_gravity: "South")
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: "#{buildVariant}#{buildType}", project_dir: 'android/')
+  end
+
+  desc "Upload Android app to App Center"
+  lane :appcenter do |options|
+    lastTag = last_git_tag
+    appName = options[:appName]
+    apkPath = options[:apkPath]
+    mappingPath = options[:mappingPath]
+    previousTag = get_previous_tag()
+    releaseNotes = changelog_from_git_commits(
+      between: [previousTag, lastTag], 
+      pretty: "- (%ae) %s",
+      date_format: "short",
+      merge_commit_filtering: "exclude_merges"
+    )
+    appcenter_upload(
+      api_token: "7903130a029adb1b9ae32ce0e8e8417b136a621b",
+      owner_name: "MBB-CFS",
+      owner_type: "organization",
+      app_name: appName,
+      file: apkPath,
+      notify_testers: true,
+      release_notes: releaseNotes
+    )
+  end
+
+  desc 'Android Development version distribution flow'
+  lane :dev do |options|
+    ENV['ENVFILE'] = '.env.dev'
+    build(shieldName: "DEV-#{last_git_tag}-red", buildVariant: "Dev", buildType: "Release")
+    appcenter(appName: "MAE-Android-Dev", apkPath: "./android/app/build/outputs/apk/dev/release/app-dev-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/dev/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "f19c502928d5095b61d798843353b52b")
+  end
+
+  desc 'Android SIT version distribution flow'
+  lane :sit do |options|
+    ENV['ENVFILE'] = '.env.sit'
+    update_android_version()
+    build(shieldName: "SIT-#{last_git_tag}-green", buildVariant: "Sit", buildType: "Release")
+    appcenter(appName: "MAE-Android-SIT", apkPath: "./android/app/build/outputs/apk/sit/release/app-sit-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/sit/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "3beb28306fcc98bf54ea6cbd10624b1b")
+    commit_android_version_bump(env: "SIT")
+  end
+
+  desc 'Android SIT Huawei version distribution flow'
+  lane :huaweisit do |options|
+    ENV['ENVFILE'] = '.env.huaweisit'
+    update_android_version()
+    build(shieldName: "SIT-#{last_git_tag}-green", buildVariant: "huaweisit", buildType: "Release")
+    appcenter(appName: "MAE-Huawei-SIT", apkPath: "./android/app/build/outputs/apk/huaweisit/release/app-huaweisit-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/sit/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "3beb28306fcc98bf54ea6cbd10624b1b")
+
+  end
+
+  desc 'Android UAT version distribution flow'
+  lane :uat do |options|
+    ENV['ENVFILE'] = '.env.uat'
+    update_android_version()
+    build(shieldName: "UAT-#{last_git_tag}-blue", buildVariant: "Uat", buildType: "Release")
+    appcenter(appName: "MAE-Android-UAT", apkPath: "./android/app/build/outputs/apk/uat/release/app-uat-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/uat/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "79ba28b3aae330795bf41d6d8dd3a328")
+    commit_android_version_bump(env: "UAT")
+  end
+
+  desc 'Android UAT Huawei version distribution flow'
+  lane :huaweiuat do |options|
+    ENV['ENVFILE'] = '.env.huaweiuat'
+    update_android_version()
+    build(shieldName: "UAT-#{last_git_tag}-blue", buildVariant: "huaweiuat", buildType: "Release")
+    appcenter(appName: "MAE-Huawei-UAT", apkPath: "./android/app/build/outputs/apk/huaweiuat/release/app-huaweiuat-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/sit/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "3beb28306fcc98bf54ea6cbd10624b1b")
+    commit_android_version_bump(env: "HuaweiUAT")
+  end
+
+  desc 'Android CIND version distribution flow'
+  lane :cind do |options|
+    ENV['ENVFILE'] = '.env.cind'
+    build(shieldName: "CIND-#{last_git_tag}-blue", buildVariant: "Cind", buildType: "Release")
+    appcenter(appName: "MAE-Android-CIND", apkPath: "./android/app/build/outputs/apk/cind/release/app-cind-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/cind/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "b57518a10288f760ac6c163f16702f83")
+  end
+
+  desc 'Android NTT version distribution flow'
+  lane :ntt do |options|
+    ENV['ENVFILE'] = '.env.ntt'
+    build(shieldName: "NTT-#{last_git_tag}-blue", buildVariant: "Ntt", buildType: "Release")
+    appcenter(appName: "MAE-Android-NTT", apkPath: "./android/app/build/outputs/apk/ntt/release/app-ntt-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/ntt/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "65dcc779f861773f311face01a9d93f1")
+  end
+
+  desc 'Android KLDC version distribution flow'
+  lane :kldc do |options|
+    ENV['ENVFILE'] = '.env.kldc'
+    build(shieldName: "KLDC-#{last_git_tag}-blue", buildVariant: "Kldc", buildType: "Release")
+    appcenter(appName: "MAE-Android-KLDC", apkPath: "./android/app/build/outputs/apk/kldc/release/app-kldc-universal-release.apk", mappingPath: "./android/app/build/outputs/mapping/kldc/release/mapping.txt" )
+    upload_android_sourcemaps(bugsnag_api_key: "0d21b36284b9e561cde585b922415c6f")
+  end
+
+  desc 'Android Staging version distribution flow'
+  lane :stg do |options|
+    buildNumber = options[:buildNumber]
+    ENV['ENVFILE'] = '.env.stg'
+    build(shieldName: "STG-#{last_git_tag}-green", buildVariant: "Stg", buildType: "Release")
+    # upload_to_play_store(track: 'beta')
+    upload_android_sourcemaps(bugsnag_api_key: "35c4c11fc5ab86abdd578d2291c72094")
+  end
+
+  desc 'Android Production version distribution flow'
+  lane :production do
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: "ProdRelease", project_dir: 'android/')
+    # upload_to_play_store
+    upload_android_sourcemaps(bugsnag_api_key: "bc5dbafa0452c39107cdc6000c016de5")
+  end
+end
+
+desc "Generate a git tag locally for version or build number bump"
+lane :generate_git_tag do |options|
+  buildNumber = options[:buildNumber]
+  semVer = options[:semVer]
+  newGitTag = "#{semVer}.#{buildNumber}"
+  add_git_tag(
+    tag: newGitTag
+  )
+end
+
+desc "Get previous local git tag value"
+lane :get_previous_tag do
+  lastTag = last_git_tag
+  tagArray = lastTag.split(".")
+  previousBuildNumber = tagArray[3].to_i - 1
+  previousTag = "#{tagArray[0]}.#{tagArray[1]}.#{tagArray[2]}.#{previousBuildNumber}"
+end
+
+desc "Push last generated local git tag to remote"
+lane :push_tag_to_remote do
+  lastTag = last_git_tag
+  push_git_tags(tag: lastTag)
+end
+
+desc "Update android versioning"
+lane :update_android_version do
+  tagArray = get_git_tag_array()
+  android_set_version_name(
+    version_name: "'#{tagArray[0]}.#{tagArray[1]}.#{tagArray[2]}'",
+    gradle_file: "android/app/build.gradle"
+  )
+  android_set_version_code(
+    version_code: tagArray[3],
+    gradle_file: "android/app/build.gradle"
+  )
+end
+
+desc "Update ios versioning"
+lane :update_ios_version do
+  tagArray = get_git_tag_array()
+  increment_version_number(
+    version_number: "'#{tagArray[0]}.#{tagArray[1]}.#{tagArray[2]}'",
+    xcodeproj: "./ios/M2ULife.xcodeproj"
+  )
+  increment_build_number(
+    build_number: "'#{tagArray[3]}'",
+    xcodeproj: "./ios/M2ULife.xcodeproj"
+  )
+end
+
+desc "Commit android version bump"
+lane :commit_android_version_bump do |options|
+  env = options[:env]
+  branchName = "#{env.upcase}_android-version-bump-v#{last_git_tag}"
+  sh("git checkout -b #{branchName}")
+  git_commit(path: "android/app/build.gradle", message: "Android #{env.upcase} Version Bump - #{last_git_tag}")
+  sh("git remote update && git push --set-upstream origin #{branchName}")
+end
+
+desc "Commit ios version bump"
+lane :commit_ios_version_bump do |options|
+  env = options[:env]
+  branchName = "#{env.upcase}_ios-version-bump-v#{last_git_tag}"
+  sh("git checkout -b #{branchName}")
+  git_commit(path: ["ios/M2ULife.xcodeproj/project.pbxproj", 
+    "ios/M2ULife/Info.plist", 
+    "ios/M2ULife/M2ULifeDEV-Info.plist",
+    "ios/M2ULife/M2ULifeSIT-Info.plist",
+    "ios/M2ULife/M2ULifeUAT-Info.plist",
+    "ios/M2ULife/M2ULifeSTG-Info.plist",
+    "ios/M2ULife/M2ULifePRD-Info.plist"], message: "iOS #{env.upcase} Version Bump - #{last_git_tag}")
+  sh("git remote update && git push --set-upstream origin #{branchName}")
+end
+
+desc "Get git tag array"
+lane :get_git_tag_array do
+  lastTag = last_git_tag
+  tagArray = lastTag.split(".")
+end
+
+desc "Upload android sourcemaps"
+lane :upload_android_sourcemaps do |options|
+  bugsnag_api_key =  options[:bugsnag_api_key]
+  tagArray = get_git_tag_array()
+  sh "cd ../ && "+
+    "node node_modules/react-native/local-cli/cli.js ram-bundle "+
+    "--platform android --dev false "+
+    "--entry-file index.js "+
+    "--bundle-output android-release.bundle "+
+    "--sourcemap-output android-release.bundle.map"
+  dir=File.expand_path("..", Dir.pwd)
+  sh "curl --http1.1 https://upload.bugsnag.com/react-native-source-map "+
+    "-F apiKey=#{bugsnag_api_key} "+
+    "-F appVersion=#{tagArray[0]}.#{tagArray[1]}.#{tagArray[2]} "+
+    "-F appVersionCode=#{tagArray[3]} "+
+    "-F dev=false "+
+    "-F platform=android "+
+    "-F sourceMap=@#{dir}/android-release.bundle.map "+
+    "-F bundle=@#{dir}/android-release.bundle "+
+    "-F projectRoot=#{dir} "+
+    "-F overwrite=true"
+end
+
+desc "Upload ios sourcemaps"
+lane :upload_ios_sourcemaps do |options|
+  bugsnag_api_key =  options[:bugsnag_api_key]
+  tagArray = get_git_tag_array()
+  sh "cd ../ && "+
+  "node node_modules/react-native/local-cli/cli.js ram-bundle "+
+  "--platform ios --dev false "+
+  "--entry-file index.js "+
+  "--bundle-output ios-release.bundle "+
+  "--sourcemap-output ios-release.bundle.map"
+  dir=File.expand_path("..", Dir.pwd)
+  sh "curl --http1.1 https://upload.bugsnag.com/react-native-source-map "+
+    "-F apiKey=#{bugsnag_api_key} "+
+    "-F appVersion=#{tagArray[0]}.#{tagArray[1]}.#{tagArray[2]} "+
+    "-F appBundleVersion=#{tagArray[3]} "+
+    "-F dev=false "+
+    "-F platform=ios "+
+    "-F sourceMap=@#{dir}/ios-release.bundle.map "+
+    "-F bundle=@#{dir}/ios-release.bundle "+
+    "-F projectRoot=#{dir} "+
+    "-F overwrite=true"
+  upload_symbols_to_bugsnag(
+    api_key: bugsnag_api_key,
+    dsym_path: [Actions.lane_context[SharedValues::DSYM_OUTPUT_PATH]]
+  )
+end

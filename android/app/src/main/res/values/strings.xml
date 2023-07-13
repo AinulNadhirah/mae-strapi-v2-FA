@@ -1,0 +1,8 @@
+<resources>
+    <string name="facebook_app_id">549189812391335</string>
+    <string name="fb_login_protocol_scheme">fb549189812391335</string>
+    <array name="supported_custom_keyboards">
+        <item>com.google.android.inputmethod.latin</item>
+        <item>com.touchtype.swiftkey</item>
+    </array>
+</resources>

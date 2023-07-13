@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#757575</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#c6d6f0</color>
+    <color name="colorGray">#757575</color>
+    <color name="colorSky">#c0e4f2</color>
+    <color name="maybankYellow">#ffde00</color>
+</resources>

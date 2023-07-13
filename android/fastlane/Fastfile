@@ -1,0 +1,95 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+update_fastlane
+
+default_platform(:android)
+
+platform :android do
+
+  desc 'Build the Android application'
+  lane :build do |options|
+    shieldName = options[:shieldName]
+    buildVariant = options[:buildVariant]
+    buildType = options[:buildType]
+    add_badge(shield: shieldName,  no_badge: true, glob: "/app/src/main/res/mipmap-*/maya*", shield_gravity: "South")
+    gradle(task: 'clean')
+    gradle(task: 'assemble', build_type: "#{buildVariant}#{buildType}")
+  end
+
+  desc 'Upload the Android application to Fabric Beta'
+  lane :fabric do
+    crashlytics(
+       api_token: "7903130a029adb1b9ae32ce0e8e8417b136a621b",
+       build_secret: "caa8701b07c5ec382098213b68a2b2c2175418212e2ab90a6fe37161fe9abc8c"
+    )
+  end
+
+  desc 'Android Development version distribution flow'
+  lane :dev do 
+    ENV['ENVFILE'] = '.env.dev'
+    build(shieldName: "DEV-#{last_git_tag}-red", buildVariant: "Dev", buildType: "Release")
+    fabric()
+  end
+
+  desc 'Android SIT version distribution flow'
+  lane :sit do 
+    ENV['ENVFILE'] = '.env.sit'
+    build(shieldName: "SIT-#{last_git_tag}-green", buildVariant: "Sit", buildType: "Release")
+    fabric()
+  end
+
+  desc 'Android UAT version distribution flow'
+  lane :uat do 
+    ENV['ENVFILE'] = '.env.uat'
+    build(shieldName: "UAT-#{last_git_tag}-blue", buildVariant: "Uat", buildType: "Release")
+    fabric()
+  end
+
+  desc 'Android Cinderella version distribution flow'
+  lane :cind do 
+    ENV['ENVFILE'] = '.env.cind'
+    build(shieldName: "CIND-#{last_git_tag}-red", buildVariant: "Cind", buildType: "Debug")
+    fabric()
+  end
+
+  desc 'Android NTT version distribution flow'
+  lane :ntt do 
+    ENV['ENVFILE'] = '.env.ntt'
+    build(shieldName: "NTT-#{last_git_tag}-red", buildVariant: "Ntt", buildType: "Debug")
+    fabric()
+  end
+
+  desc 'Android KLDC version distribution flow'
+  lane :kldc do 
+    ENV['ENVFILE'] = '.env.kldc'
+    build(shieldName: "KLDC-#{last_git_tag}-red", buildVariant: "Kldc", buildType: "Debug")
+    fabric()
+  end
+  
+
+  desc 'Android Staging version distribution flow'
+  lane :stg do
+    add_badge
+    gradle(task: 'clean')
+    gradle(task: 'assemble', build_type: "StgRelease")
+    upload_to_play_store(track: 'beta')
+  end
+
+  desc 'Android Production version distribution flow'
+  lane :production do
+    gradle(task: 'clean')
+    gradle(task: 'assemble', build_type: "ProdRelease")
+    upload_to_play_store
+  end
+end

@@ -1,0 +1,58 @@
+diff --git a/node_modules/react-native/react.gradle b/node_modules/react-native/react.gradle
+index 6441d93..1eb4645 100644
+--- a/node_modules/react-native/react.gradle
++++ b/node_modules/react-native/react.gradle
+@@ -147,6 +147,33 @@ afterEvaluate {
+                 jsSourceMapsDir.mkdirs()
+             }
+ 
++            doLast {
++                def flavorPathSegment = ""
++                println targetName.toLowerCase();
++                android.productFlavors.all { flavor ->
++                    if (targetName.toLowerCase().contains(flavor.name.toLowerCase())) {
++                        flavorPathSegment = flavor.name
++                    }
++                }
++                def moveFunc = { resFolder ->
++                    File originalDir = file("${buildDir}/generated/res/react/${flavorPathSegment}/release/${resFolder}");
++                    if (originalDir.exists()) {
++                        File destDir = file("${buildDir}/../src/main/res/${resFolder}");
++                        ant.move(file: originalDir, tofile: destDir);
++                    }
++                }
++
++                moveFunc.curry("drawable").call()
++                moveFunc.curry("drawable-ldpi").call()
++                moveFunc.curry("drawable-mdpi").call()
++                moveFunc.curry("drawable-hdpi").call()
++                moveFunc.curry("drawable-xhdpi").call()
++                moveFunc.curry("drawable-xxhdpi").call()
++                moveFunc.curry("drawable-xxxhdpi").call()
++                moveFunc.curry("raw").call()
++            }
++
++
+             // Set up inputs and outputs so gradle can cache the result
+             inputs.files fileTree(dir: reactRoot, excludes: inputExcludes)
+             outputs.dir(jsBundleDir)
+@@ -302,6 +302,11 @@ afterEvaluate {
+             enabled(currentBundleTask.enabled)
+         }
+ 
++        // mergeResources task runs before the bundle file is copied to the intermediate asset directory from Android plugin 4.1+.
++        // This ensures to copy the bundle file before mergeResources task starts
++        def mergeResourcesTask = tasks.findByName("merge${targetName}Resources")
++        mergeResourcesTask.dependsOn(currentAssetsCopyTask)
++
+         packageTask.dependsOn(currentAssetsCopyTask)
+         if (buildPreBundleTask != null) {
+             buildPreBundleTask.dependsOn(currentAssetsCopyTask)
+diff --git a/node_modules/react-native/scripts/.packager.env b/node_modules/react-native/scripts/.packager.env
+new file mode 100644
+index 0000000..21a13cf
+--- /dev/null
++++ b/node_modules/react-native/scripts/.packager.env
+@@ -0,0 +1 @@
++export RCT_METRO_PORT=8081
+\ No newline at end of file

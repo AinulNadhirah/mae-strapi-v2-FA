@@ -1,0 +1,344 @@
+{
+    "project_info": {
+        "project_number": "608422976969",
+        "firebase_url": "https://m2ulife-7bd3c.firebaseio.com",
+        "project_id": "m2ulife-7bd3c",
+        "storage_bucket": "m2ulife-7bd3c.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:27df502cf8b97e32",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:1a4758d3eb47eed59bdc18",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.cind"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:5dcb44a31742444b",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.debug"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:40f03cae8e08dd57",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.dev"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:16efc47a291a8e239bdc18",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.kldc"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:0f530956b692935b9bdc18",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.ntt"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:8a4f03c5f38cc37f",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.sit"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:c2e3f866c60023119bdc18",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.stg"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:1ac9e6c9b9ac6f10",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.uat"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-0l2l8ko5ananegf5e6kcvjp8g1ioa5ai.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life-uat",
+                                "app_store_id": "1481028763"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

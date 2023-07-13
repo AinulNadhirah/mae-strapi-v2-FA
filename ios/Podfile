@@ -1,0 +1,167 @@
+platform :ios, '13.0'
+# Override Firebase SDK Version
+$FirebaseSDKVersion = '10.5.0'
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+pod 'Firebase', :modular_headers => true
+pod 'FirebaseCoreInternal', :modular_headers => true
+pod 'GoogleUtilities', :modular_headers => true
+pod 'FirebaseCore', :modular_headers => true
+
+  pod 'GoogleMLKit/TextRecognition'
+  pod 'GoogleMLKit/BarcodeScanning'
+  pod 'GoogleMLKit/FaceDetection'
+  pod 'TrustKit'
+
+def shared_pods
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  
+  # pod 'Fabric'
+  # pod 'Crashlytics'
+  pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
+  pod 'RNFBCrashlytics', :path => '../node_modules/@react-native-firebase/crashlytics'
+
+  # pod 'Firebase/MLVision', '~> 6.28.0'
+  # pod 'Firebase/MLVisionTextModel'
+  # pod 'Firebase/MLVisionFaceModel','~> 6.28.0'
+  pod 'TensorFlowLiteObjC', '~> 2.0.0'
+  pod 'GoogleDataTransport', '~> 9.1'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts.podspec"
+  pod 'Permission-FaceID', :path => "#{permissions_path}/FaceID.podspec"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways.podspec"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse.podspec"
+  pod 'Permission-MediaLibrary', :path => "#{permissions_path}/MediaLibrary.podspec"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications.podspec"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary.podspec"
+  pod 'zolozkit', :source => 'https://github.com/zoloz-pte-ltd/zoloz-demo-ios'
+end
+
+ target 'M2ULife' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+
+   shared_pods
+   pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
+
+ end
+
+ target 'M2ULife Development' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+
+   shared_pods
+ end
+
+target 'M2ULife SIT' do
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+  shared_pods
+end
+
+ target 'M2ULife UAT' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+   shared_pods
+ end
+
+ target 'M2ULife CIND' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+  
+   shared_pods
+ end
+
+ target 'M2ULife KLDC' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+  
+   shared_pods
+ end
+
+ target 'M2ULife NTT' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+  
+   shared_pods
+ end
+
+ target 'M2ULife Staging' do
+   config = use_native_modules!
+
+   use_react_native!(:path => config["reactNativePath"])
+  
+   shared_pods
+ end
+
+target 'M2ULife Production' do
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+  
+  shared_pods
+end
+
+# Enable flippers
+use_flipper!({ 'Flipper' => '0.91.1' })
+post_install do |installer|
+  # Fix for XCode 12.5
+  find_and_replace("../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
+  "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
+  
+  flipper_post_install(installer)
+  fix_library_search_paths(installer)
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = "arm64"
+      config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+      # # Uncomment below code if port 8081 used by McAfee
+      if config.name == 'Debug'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] + ['RCT_METRO_PORT=8082']
+      end
+    end
+  end
+end
+
+def fix_library_search_paths(installer)
+  def fix_config(config)
+    lib_search_paths = config.build_settings["LIBRARY_SEARCH_PATHS"]
+    if lib_search_paths
+     if lib_search_paths.include?("$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)") || lib_search_paths.include?("\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"")
+        # $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME) causes problem with Xcode 12.5 + arm64 (Apple M1)
+        # since the libraries there are only built for x86_64 and i386.
+        lib_search_paths.delete("$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)")
+        lib_search_paths.delete("\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"")
+        if !(lib_search_paths.include?("$(SDKROOT)/usr/lib/swift") || lib_search_paths.include?("\"$(SDKROOT)/usr/lib/swift\""))
+          # however, $(SDKROOT)/usr/lib/swift is required, at least if user is not running CocoaPods 1.11
+          lib_search_paths.insert(0, "$(SDKROOT)/usr/lib/swift")
+        end
+     end
+    end
+  end
+end
+
+def find_and_replace(dir, findstr, replacestr)
+  Dir[dir].each do |name|
+      text = File.read(name)
+      replace = text.gsub(findstr,replacestr)
+      if text != replace
+          puts "Fix: " + name
+          File.open(name, "w") { |file| file.puts replace }
+          STDOUT.flush
+      end
+  end
+  Dir[dir + '*/'].each(&method(:find_and_replace))
+end

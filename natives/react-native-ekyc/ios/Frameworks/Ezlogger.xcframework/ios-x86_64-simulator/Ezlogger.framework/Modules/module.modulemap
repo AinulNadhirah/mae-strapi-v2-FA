@@ -1,0 +1,6 @@
+framework module Ezlogger {
+  umbrella header "Ezlogger.h"
+
+  export *
+  module * { export * }
+}

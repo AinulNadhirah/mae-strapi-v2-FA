@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.fico.fba.client.android.sdk.CameraSourcePreview
+        android:id="@+id/camera_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <com.fico.fba.client.android.sdk.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.fico.fba.client.android.sdk.CameraSourcePreview>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/selfie_overlay_circle" />
+
+    <!--HEADER-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="36dp">
+
+        <ImageView
+            android:id="@+id/selfie_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/backwhite" />
+
+    </RelativeLayout>
+
+    <!--FOOTER-->
+
+    <TextView
+        android:id="@+id/faceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="64dp"
+        android:paddingHorizontal="30dp"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/selfie_start_btn"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/button_rounded_shape"
+        android:text="Scan now"
+        android:textAllCaps="false"
+        android:textColor="#000" />
+</FrameLayout>

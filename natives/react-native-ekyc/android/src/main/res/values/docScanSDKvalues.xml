@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">#3F51B5</item>-->
+<!--        <item name="colorPrimaryDark">#303F9F</item>-->
+<!--        <item name="colorAccent">#FF4081</item>-->
+<!--    </style>-->
+    <!-- Colors !-->
+    <color name="color_rectangle">#FFF</color>
+    <!-- EO Colors !-->
+
+    <dimen name="dimen_stroke_rect">2dp</dimen>
+
+
+    <string name="align_and_tap_to_start_Hologram">Click Button to start Hologram detection</string>
+    <string name="align_and_tap_to_start_front">Click Button to start (Front Side)</string>
+    <string name="scanning_front_ocr">Reading text.. (Front Side)</string>
+
+    <string name="align_and_tap_to_start_back">Click Button to start(Back Side)</string>
+
+    <string name="align_and_tap_to_start">Click Button to start (For Face)</string>
+    <string name="align_and_tap_to_start_frontcard">Click Button to start (Front Side)</string>
+    <string name="align_and_tap_to_start_backcard">Click Button to start(Back Side)</string>
+    <string name ="base64">MIIDgTCCAmmgAwIBAgIEWLnvXjANBgkqhkiG9w0BAQ0FADBwMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExEzARBgNVBAcTClN1bm55dmFsbGUxEzARBgNVBAoTClRlY2hub2xvZ3kxFDASBgNVBAsTC0VaTUNPTSBJbmMuMRQwEgYDVQQDEwtFWk1DT00gSW5jLjAgFw0xNDA5MTEwNTE5MjVaGA82ODg4MDMwMjA1MTkyNVowcDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRMwEQYDVQQHEwpTdW5ueXZhbGxlMRMwEQYDVQQKEwpUZWNobm9sb2d5MRQwEgYDVQQLEwtFWk1DT00gSW5jLjEUMBIGA1UEAxMLRVpNQ09NIEluYy4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCbKng0kna5kDIXOUAOEa1l+//bt8MZoSZ43IntkuhABsvVD1t+8As6zY47VD4LlEtGbko7fCru49zBXoxcIgn3ENcTFeQja9c2u9lVFl4dm4CuNrrv2JFHu2j3H5Gh+iD4WHWqi3qJ3L5pzRQZBOa9IDXXUUQTP2QNkg0eBNMpZCIW/4+0g6YKuBdYsyWphEKXcdN6f5k67RdK8YIY0l8DcYjymVg8JWizhfIbjdklZRfFcGwQlmYYDueX6bJrWq8ECLTwH0KEVtvY+JaXhVQuEGXdrvnwSYq/ljSKG/3XF3owgEa4UkljJVW50t5gzQp4kphyvoKIcfC/eg5JPD5nAgMBAAGjITAfMB0GA1UdDgQWBBQEsnGKtp84WTJZnQlicetp4JT/JTANBgkqhkiG9w0BAQ0FAAOCAQEAhDweI8kgV9Xeqi55PzZjT6naoGALMqtaPVbo/VGe6SNOkjOtkFJEB+O6llJlkoRaKzPodfraaPtdQmH38Ite02tk80WhiDP3sXKd2N/I/c+RqoWREW4j48+SYOuE82Dyq9aSrr1r3k9UfvS3YDsMNKBe0ntd8gR/ZtAE+zYNfhEvNKbqYBzl6qUqwLHNAw5rXoXnjVbcVWt3kR7/1/qwU/IGqbSdVSbenBpk55K3csnqPsXQvpNhASvsWbZw7ipSZin5Cd+8KS0OAIdYJQMFS6MGIt3uUjkjghuXUTIcuXxa0OH3XKBZ8dzx9pykKEIaAfdUy+gOdCnZ7muCKueKkw==</string>
+
+
+</resources>

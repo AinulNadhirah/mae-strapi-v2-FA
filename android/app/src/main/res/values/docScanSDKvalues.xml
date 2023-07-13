@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">#3F51B5</item>-->
+<!--        <item name="colorPrimaryDark">#303F9F</item>-->
+<!--        <item name="colorAccent">#FF4081</item>-->
+<!--    </style>-->
+    <!-- Colors !-->
+    <color name="color_rectangle">#FFF</color>
+    <!-- EO Colors !-->
+
+    <dimen name="dimen_stroke_rect">2dp</dimen>
+
+
+    <string name="align_and_tap_to_start_Hologram">Click Button to start Hologram detection</string>
+    <string name="align_and_tap_to_start_front">Click Button to start (Front Side)</string>
+    <string name="scanning_front_ocr">Reading text.. (Front Side)</string>
+
+    <string name="align_and_tap_to_start_back">Click Button to start(Back Side)</string>
+
+    <string name="align_and_tap_to_start">Click Button to start (For Face)</string>
+    <string name="align_and_tap_to_start_frontcard">Click Button to start (Front Side)</string>
+    <string name="align_and_tap_to_start_backcard">Click Button to start(Back Side)</string>
+
+
+</resources>

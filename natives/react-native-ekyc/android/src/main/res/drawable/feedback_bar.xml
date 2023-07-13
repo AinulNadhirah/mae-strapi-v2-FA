@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <padding
+                android:bottom="@dimen/indicator_padding"
+                android:left="@dimen/indicator_padding"
+                android:right="@dimen/indicator_padding"
+                android:top="@dimen/indicator_padding" />
+            <solid android:color="@color/feedback_background" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="@color/feedback_primary" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

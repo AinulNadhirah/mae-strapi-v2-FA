@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-countdown-circle/src/index.js b/node_modules/react-native-countdown-circle/src/index.js
+index 1277e1c..277600d 100644
+--- a/node_modules/react-native-countdown-circle/src/index.js
++++ b/node_modules/react-native-countdown-circle/src/index.js
+@@ -157,6 +157,7 @@ export default class PercentageCircle extends React.PureComponent {
+       toValue: 100,
+       duration: 1000,
+       easing: Easing.linear,
++      useNativeDriver: false
+     }).start(this.onCircleAnimated)
+   };
+ 

@@ -1,0 +1,69 @@
+{
+    "_from": "react-native-passkit-wallet",
+    "_id": "react-native-passkit-wallet@0.1.4",
+    "_inBundle": false,
+    "_integrity": "sha512-H1EQ1NyRVPRujivOZrUkcn7OWGAtsAqGVYghxOLBFHpFLpyGyCvGnfpGjcu4UVej8X50SJsh9d9ysZtVTct23Q==",
+    "_location": "/react-native-passkit-wallet",
+    "_phantomChildren": {},
+    "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "react-native-passkit-wallet",
+        "name": "react-native-passkit-wallet",
+        "escapedName": "react-native-passkit-wallet",
+        "rawSpec": "",
+        "saveSpec": null,
+        "fetchSpec": "latest"
+    },
+    "_requiredBy": [
+        "#USER",
+        "/"
+    ],
+    "_resolved": "https://registry.npmjs.org/react-native-passkit-wallet/-/react-native-passkit-wallet-0.1.4.tgz",
+    "_shasum": "246476c8163813a4b054d06215a9d06042757ec3",
+    "_spec": "react-native-passkit-wallet",
+    "_where": "/Users/admin/Documents/GitHub/Upgrade_Development",
+    "author": {
+        "name": "Masayuki Iwai",
+        "email": "miyabi@mybdesign.com",
+        "url": "http://mybdesign.com/"
+    },
+    "bugs": {
+        "url": "https://github.com/miyabi/react-native-passkit-wallet/issues"
+    },
+    "bundleDependencies": false,
+    "deprecated": false,
+    "description": "React Native module to handle PassKit pass.",
+    "devDependencies": {
+        "babel-eslint": "^8.0.0",
+        "babel-preset-flow": "^6.23.0",
+        "babel-preset-react-native": "^4.0.0",
+        "eslint": "^4.6.1",
+        "eslint-plugin-flowtype": "^2.38.0",
+        "eslint-plugin-react": "^7.3.0",
+        "flow-bin": "^0.61.0",
+        "prop-types": "^15.6.0",
+        "react": "^16.2.0",
+        "react-native": "^0.52.0"
+    },
+    "homepage": "https://github.com/miyabi/react-native-passkit-wallet#readme",
+    "keywords": [
+        "react-native",
+        "ios",
+        "PassKit",
+        "Wallet"
+    ],
+    "license": "MIT",
+    "main": "index",
+    "name": "react-native-passkit-wallet",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/miyabi/react-native-passkit-wallet.git"
+    },
+    "scripts": {
+        "flow": "flow --show-all-errors",
+        "lint": "eslint .",
+        "test": "npm run lint"
+    },
+    "version": "0.1.4"
+}

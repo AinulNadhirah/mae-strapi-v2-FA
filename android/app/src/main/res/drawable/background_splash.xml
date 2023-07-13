@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+
+    <item
+        android:drawable="@color/maybankYellow"/>
+    <item>
+        <bitmap android:src="@mipmap/splosh" android:gravity="fill" />
+    </item>
+
+    <!-- <item
+        android:drawable="@mipmap/splosh"
+        android:gravity="center" /> -->
+
+</layer-list>

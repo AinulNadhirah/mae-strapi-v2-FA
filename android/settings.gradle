@@ -1,0 +1,120 @@
+rootProject.name = 'M2ULife'
+include ':react-native-image-base64'
+project(':react-native-image-base64').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-base64/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':react-native-hms-analytics'
+project(':react-native-hms-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-analytics/android')
+include ':react-native-hms-push'
+project(':react-native-hms-push').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-push/android')
+include ':react-native-hms-availability'
+project(':react-native-hms-availability').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-availability/android')
+// include ':rn-qr-generator'
+// project(':rn-qr-generator').projectDir = new File(rootProject.projectDir, '../node_modules/rn-qr-generator/android')
+// include ':react-native-fbsdk'
+// project(':react-native-fbsdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk/android')
+// include ':react-native-bootsplash'
+// project(':react-native-bootsplash').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-bootsplash/android')
+// include ':react-native-webview'
+// project(':react-native-webview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webview/android')
+// include ':@react-native-community_masked-view'
+// project(':@react-native-community_masked-view').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/masked-view/android')
+// include ':react-native-safe-area-context'
+// project(':react-native-safe-area-context').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-safe-area-context/android')
+// include ':react-native-screens'
+// project(':react-native-screens').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-screens/android')
+// include ':react-native-gesture-handler'
+// project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
+// include ':react-native-reanimated'
+// project(':react-native-reanimated').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-reanimated/android')
+// include ':react-native-background-timer'
+// project(':react-native-background-timer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-background-timer/android')
+// include ':react-native-exit-app'
+// project(':react-native-exit-app').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-exit-app/android')
+// include ':react-native-secure-storage'
+// project(':react-native-secure-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-secure-storage/android')
+// include ':lottie-react-native'
+// project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
+// include ':@react-native-community_blur'
+// project(':@react-native-community_blur').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/blur/android')
+// include ':react-native-device-settings'
+// project(':react-native-device-settings').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-device-settings/android')
+// include ':react-native-image-crop-picker'
+// project(':react-native-image-crop-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-crop-picker/android')
+// include ':react-native-android-open-settings'
+// project(':react-native-android-open-settings').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-open-settings/android')
+// include ':react-native-geocoder'
+// project(':react-native-geocoder').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-geocoder/android')
+// include ':react-native-select-contact'
+// project(':react-native-select-contact').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-select-contact/android/app')
+// include ':react-native-html-to-pdf'
+// project(':react-native-html-to-pdf').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-html-to-pdf/android')
+// include ':react-native-spinkit'
+// project(':react-native-spinkit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-spinkit/android')
+// include ':react-native-config'
+// project(':react-native-config').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-config/android')
+// include ':react-native-wheel-pick'
+// project(':react-native-wheel-pick').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-wheel-pick/android')
+// include ':react-native-fs'
+// project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/android')
+// include ':rn-fetch-blob'
+// project(':rn-fetch-blob').projectDir = new File(rootProject.projectDir, '../node_modules/rn-fetch-blob/android')
+// include ':react-native-maps'
+// project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/lib/android')
+
+// include ':react-native-view-shot'
+// include ':react-native-view-shot', ':rsa'
+// project(':react-native-view-shot').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-view-shot/android')
+// include ':react-native-share'
+// project(':react-native-share').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-share/android')
+// include ':react-native-firebase'
+// project(':react-native-firebase').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-firebase/android')
+// include ':@react-native-community_async-storage'
+// project(':@react-native-community_async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/async-storage/android')
+// include ':@react-native-community_netinfo'
+// project(':@react-native-community_netinfo').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/netinfo/android')
+// include ':react-native-udp'
+// project(':react-native-udp').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-udp/android')
+// include ':react-native-tcp'
+// project(':react-native-tcp').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-tcp/android')
+// include ':react-native-os'
+// project(':react-native-os').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-os/android')
+// include ':react-native-randombytes'
+// project(':react-native-randombytes').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-randombytes/android')
+// include ':react-native-device-info'
+// project(':react-native-device-info').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-device-info/android')
+// include ':@react-native-community_async-storage'
+// project(':@react-native-community_async-storage').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/async-storage/android')
+// include ':react-native-reanimated'
+// project(':react-native-reanimated').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-reanimated/android')
+// include ':react-native-gesture-handler'
+// project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
+// include ':react-native-svg'
+// project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
+// include ':react-native-view-pdf'
+// project(':react-native-view-pdf').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-view-pdf/android')
+// include ':react-native-vector-icons'
+// project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+// include ':react-native-update'
+// project(':react-native-update').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-update/android')
+// include ':react-native-splash-screen'
+// project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+// include ':react-native-picker-view'
+// project(':react-native-picker-view').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-picker-view/android')
+// include ':react-native-linear-gradient'
+// project(':react-native-linear-gradient').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-linear-gradient/android')
+// include ':react-native-image-base64'
+// project(':react-native-image-base64').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-base64/android')
+// //include ':react-native-google-fit'
+// //project(':react-native-google-fit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-google-fit/android')
+// include ':react-native-contacts'
+// project(':react-native-contacts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-contacts/android')
+// include ':react-native-camera'
+// project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+// include ':react-native-biometrics'
+// project(':react-native-biometrics').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-biometrics/android')
+// include ':bugsnag-react-native'
+// project(':bugsnag-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/bugsnag-react-native/android')
+// include ':react-native-set-soft-input-mode'
+// project(':react-native-set-soft-input-mode').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-set-soft-input-mode/android')
+
+include ':app'

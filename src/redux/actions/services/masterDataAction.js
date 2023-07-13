@@ -1,0 +1,77 @@
+export const MASTERDATA_LOADING = () => ({});
+
+export const MASTERDATA_ERROR = (error) => ({
+    error: error,
+});
+
+export const MASTERDATA_SUCCESS = (
+    data,
+    branchStateData,
+    countryOfBirth,
+    crsStatus,
+    employmentType,
+    estimatedMonthlyTxnAmount,
+    estimatedMonthlyTxnVolume,
+    fatcaCountryList,
+    fatcaStatus,
+    gender,
+    icStateCode,
+    icTypes,
+    incomeRange,
+    maeResidentialCountry,
+    permanentresidentcountry,
+    purpose,
+    occupation,
+    race,
+    residentialcountryforeigner,
+    sector,
+    sourceOfFundCountry,
+    sourceOfFundOrigin,
+    sourceOfWealthOrigin,
+    stateData,
+    title,
+    zestActivationAmountNTB,
+    m2uPremierActivationAmountNTB,
+    zestActivationAmountETB,
+    m2uPremierActivationAmountETB,
+    maeCitizenship,
+    debitCardApplicationAmount
+) => ({
+    data: data,
+    branchStateData: branchStateData,
+    countryOfBirth: countryOfBirth,
+    crsStatus: crsStatus,
+    employmentType: employmentType,
+    estimatedMonthlyTxnAmount: estimatedMonthlyTxnAmount,
+    estimatedMonthlyTxnVolume: estimatedMonthlyTxnVolume,
+    fatcaCountryList: fatcaCountryList,
+    fatcaStatus: fatcaStatus,
+    gender: gender,
+    icStateCode: icStateCode,
+    icTypes: icTypes,
+    incomeRange: incomeRange,
+    maeResidentialCountry: maeResidentialCountry,
+    permanentresidentcountry: permanentresidentcountry,
+    purpose: purpose,
+    occupation: occupation,
+    race: race,
+    residentialcountryforeigner: residentialcountryforeigner,
+    sector: sector,
+    sourceOfFundCountry: sourceOfFundCountry,
+    sourceOfFundOrigin: sourceOfFundOrigin,
+    sourceOfWealthOrigin: sourceOfWealthOrigin,
+    stateData: stateData,
+    title: title,
+    maeCitizenship: maeCitizenship,
+    zestActivationAmountNTB: zestActivationAmountNTB,
+    m2uPremierActivationAmountNTB: m2uPremierActivationAmountNTB,
+    zestActivationAmountETB: zestActivationAmountETB,
+    m2uPremierActivationAmountETB: m2uPremierActivationAmountETB,
+    debitCardApplicationAmount: debitCardApplicationAmount,
+});
+
+export const MASTERDATA_CLEAR = () => ({});
+
+export const MASTERDATA_UPDATE_SOURCE_OF_FUND_COUNTRY = (sourceOfFundCountry) => ({
+    sourceOfFundCountry: sourceOfFundCountry,
+});

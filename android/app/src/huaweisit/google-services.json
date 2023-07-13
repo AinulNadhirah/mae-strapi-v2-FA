@@ -1,0 +1,227 @@
+{
+    "project_info": {
+        "project_number": "608422976969",
+        "firebase_url": "https://m2ulife-7bd3c.firebaseio.com",
+        "project_id": "m2ulife-7bd3c",
+        "storage_bucket": "m2ulife-7bd3c.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:27df502cf8b97e32",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:5dcb44a31742444b",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei.debug"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:40f03cae8e08dd57",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei.dev"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:8a4f03c5f38cc37f",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei.sit"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:30a658843ed29133",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei.stg"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:608422976969:android:1ac9e6c9b9ac6f10",
+                "android_client_info": {
+                    "package_name": "com.maybank2u.life.huawei.uat"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyBsqytRPadasLgsAFiBD21Xn2H364E55yg"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "608422976969-9nk5l4jdaq518nlgug83h5kuqj4d4n98.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "608422976969-h2q4j43mmuip6ki56831qd8f0gj2gdnd.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.maybank2u.life.huawei"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

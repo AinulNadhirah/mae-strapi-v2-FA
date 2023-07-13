@@ -1,0 +1,85 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  # iOS Lanes
+  desc 'Build the iOS application'
+  lane :build do |options|
+    shieldName = options[:shieldName]
+    scheme = options[:scheme]
+    exportMethod = options[:exportMethod]
+    ipaName = options[:ipaName]
+    add_badge(shield: shieldName,  no_badge: true, shield_gravity: "South")
+    cocoapods(use_bundle_exec: false, try_repo_update_on_error: true)
+    build_app(
+      scheme: "M2ULife #{scheme}",
+      export_method: exportMethod,
+      clean: true,
+      output_name: ipaName
+    )
+  end
+
+  desc 'Upload the iOS application to Fabric Beta'
+  lane :fabric do
+    crashlytics(
+       api_token: "5d6311fb6d560234831ed1c1ef9e726af59249c9",
+       build_secret: "caa8701b07c5ec382098213b68a2b2c2175418212e2ab90a6fe37161fe9abc8c"
+    )
+end
+
+  desc 'iOS Development version distribution flow'
+  lane :dev do 
+    build(shieldName: "DEV-#{last_git_tag}-red", scheme: "Development", exportMethod: "development", ipaName: "M2ULifeDEV.ipa")
+    fabric()
+  end
+
+  desc 'iOS SIT version distribution flow'
+  lane :sit do 
+    build(shieldName: "SIT-#{last_git_tag}-green", scheme: "SIT", exportMethod: "ad-hoc", ipaName: "M2ULifeSIT.ipa")
+    fabric()
+  end
+
+  desc 'iOS UAT version distribution flow'
+  lane :uat do 
+    build(shieldName: "UAT-#{last_git_tag}-blue", scheme: "UAT", exportMethod: "ad-hoc", ipaName: "M2ULifeUAT.ipa")
+    fabric()
+  end
+
+  desc "iOS Staging version distribution flow"
+  lane :stg do
+    add_badge
+    build_app(
+      scheme: "M2ULife Staging",
+      export_method: "app-store",
+      clean: true,
+      output_name: "M2ULifeSTG.ipa"
+    )
+    upload_to_testflight
+  end
+
+  desc "iOS Production version distribution flow"
+  lane :production do
+    build_app(
+      scheme: "M2ULife Production",
+      export_method: "app-store",
+      clean: true,
+      output_name: "M2ULife.ipa"
+    )
+    upload_to_app_store
+  end
+
+end

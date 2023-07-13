@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "commonjs",
+        "paths": {
+            "@components/*": ["./src/components/*"],
+            "@screens/*": ["./src/screens/*"],
+            "@navigation": ["./src/navigation"],
+            "@navigation/*": ["./src/navigation/*"],
+            "@constants/*": ["./src/constants/*"],
+            "@assets": ["./src/assets"],
+            "@services": ["./src/services"],
+            "@assets/*": ["./src/assets/*"],
+            "@services/*": ["./src/services/*"],
+            "@redux": ["./src/redux"],
+            "@redux/*": ["./src/redux/*"],
+            "@layouts/*": ["./src/components/Layouts/*"],
+            "@utils": ["./src/utilities"],
+            "@utils/*": ["./src/utilities/*"],
+            "@context": ["./src/context"],
+            "@context/*": ["./src/context/*"],
+            "@native/*": ["./src/native/*"],
+            "@config": ["./src/config"],
+            "@config/*": ["./src/config/*"],
+            "@libs": ["./src/libs"],
+            "@libs/*": ["./src/libs/*"],
+            "@styles/*": ["./src/styles/*"]
+        }
+    },
+    "exclude": ["node_modules", "ios", "android", "fastlane", "patches"]
+}
